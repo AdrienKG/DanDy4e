@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cslvr_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+                tools:context=".MainListViewAdapter"
+                android:paddingLeft="@dimen/layout_horizontal_margin"
+                android:paddingTop="@dimen/layout_vertical_margin"
+                android:paddingRight="@dimen/layout_horizontal_margin"
+                android:paddingBottom="@dimen/layout_vertical_margin">
+
+    <TextView
+        android:id="@+id/cslvr_name"
+        android:layout_width="wrap_content"
+        android:text="@string/name_label"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/cslvr_race"
+        android:text="@string/race_label"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cslvr_name"
+        style="@style/cslvr_small_label"/>
+
+    <TextView
+        android:id="@+id/cslvr_class"
+        android:text="@string/class_label"
+        android:layout_toEndOf="@id/cslvr_race"
+        android:layout_below="@+id/cslvr_name"
+        style="@style/cslvr_small_label"/>
+
+    <TextView
+        android:id="@+id/cslvr_level"
+        android:text="@string/level_label"
+        android:layout_toEndOf="@id/cslvr_class"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/cslvr_name"
+        style="@style/cslvr_small_label"/>
+
+</RelativeLayout>

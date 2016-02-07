@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="cslvr_small_label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:layout_marginEnd">@dimen/component_horizontal_margin</item>
+    </style>
+
+    <style name="cc_label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+        <item name="android:layout_alignParentStart">true</item>
+    </style>
+
+    <style name="cc_label_not_first" parent="cc_label">
+        <item name="android:paddingTop">@dimen/component_vertical_padding</item>
+    </style>
+
+    <style name="cc_text_field">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_toEndOf">@id/cc_name_label</item>
+    </style>
+
+</resources>
