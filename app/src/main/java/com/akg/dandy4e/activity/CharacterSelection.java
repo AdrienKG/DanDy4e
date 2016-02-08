@@ -116,8 +116,8 @@ public class CharacterSelection extends ActionBarActivity {
 //            case R.id.action_settings:
 //                return true;
             case R.id.action_new:
-//                Intent intent = new Intent(this, CharacterCreation.class);
-//                startActivityForResult(intent, 1);
+                Intent intent = new Intent(this, CharacterCreation.class);
+                startActivityForResult(intent, 1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
