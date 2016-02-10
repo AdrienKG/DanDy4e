@@ -15,7 +15,6 @@ import android.widget.ListView;
 
 import com.akg.dandy4e.R;
 import com.akg.dandy4e.activity.adapters.CharacterSelectionListViewAdapter;
-import com.akg.dandy4e.database.CharacterReaderContract;
 import com.akg.dandy4e.database.CharacterReaderContract.CharacterEntry;
 import com.akg.dandy4e.database.CharacterReaderDbHelper;
 import com.akg.dandy4e.database.object.Character;

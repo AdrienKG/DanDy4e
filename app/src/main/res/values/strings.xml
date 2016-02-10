@@ -6,4 +6,6 @@
     <string name="class_label">Class:</string>
     <string name="level_label">Level:</string>
     <string name="action_new">Create New Character</string>
+    <string name="cc_activity_name">Character Creation</string>
+    <string name="action_accept">Create</string>
 </resources>

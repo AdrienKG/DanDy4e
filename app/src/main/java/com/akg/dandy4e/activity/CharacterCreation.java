@@ -1,15 +1,12 @@
 package com.akg.dandy4e.activity;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
 
 import com.akg.dandy4e.R;
-import com.akg.dandy4e.database.CharacterReaderContract.CharacterEntry;
 import com.akg.dandy4e.database.CharacterReaderDbHelper;
 
 public class CharacterCreation  extends Activity {
@@ -27,7 +24,7 @@ public class CharacterCreation  extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_character_creation, menu);
+        getMenuInflater().inflate(R.menu.menu_character_creation, menu);
         return true;
     }
 

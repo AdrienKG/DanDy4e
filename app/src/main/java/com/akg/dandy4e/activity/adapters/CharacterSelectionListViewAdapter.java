@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.List;
-
-import com.akg.dandy4e.database.object.Character;
 import com.akg.dandy4e.R;
+import com.akg.dandy4e.database.object.Character;
+
+import java.util.List;
 
 public class CharacterSelectionListViewAdapter extends ArrayAdapter<Character> {
     List<Character> modelItems = null;
