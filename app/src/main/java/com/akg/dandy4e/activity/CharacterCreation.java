@@ -1,15 +1,16 @@
 package com.akg.dandy4e.activity;
 
-import android.app.Activity;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.content.*;
+import android.database.sqlite.*;
+import android.os.*;
+import android.support.v7.app.*;
+import android.view.*;
+import android.widget.*;
+import com.akg.dandy4e.*;
+import com.akg.dandy4e.database.*;
+import com.akg.dandy4e.database.CharacterReaderContract.*;
 
-import com.akg.dandy4e.R;
-import com.akg.dandy4e.database.CharacterReaderDbHelper;
-
-public class CharacterCreation  extends Activity {
+public class CharacterCreation  extends ActionBarActivity {
 
     private SQLiteDatabase db;
 
@@ -34,17 +35,17 @@ public class CharacterCreation  extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        //if (id == R.id.action_accept) {
-       //     ContentValues values = new ContentValues();
-         //   values.put(CharacterEntry.COLUMN_NAME_NAME, ((EditText) findViewById(R.id.acc_name_field)).getText().toString());
-        //    values.put(CharacterEntry.COLUMN_NAME_RACE, ((EditText) findViewById(R.id.acc_race_field)).getText().toString());
-       //     values.put(CharacterEntry.COLUMN_NAME_CLASS, ((EditText) findViewById(R.id.acc_class_field)).getText().toString());
-         //   values.put(CharacterEntry.COLUMN_NAME_LEVEL, Integer.valueOf(1));
-        //    db.insert(CharacterEntry.TABLE_NAME, null, values);
-        //    setResult(RESULT_OK, null);
-         //   finish();
-         //   return true;
-       // }
+        if (id == R.id.action_accept) {
+            ContentValues values = new ContentValues();
+            values.put(CharacterEntry.COLUMN_NAME_NAME, ((EditText) findViewById(R.id.cc_name_field)).getText().toString());
+            values.put(CharacterEntry.COLUMN_NAME_RACE, ((EditText) findViewById(R.id.cc_race_field)).getText().toString());
+            values.put(CharacterEntry.COLUMN_NAME_CLASS, ((EditText) findViewById(R.id.cc_class_field)).getText().toString());
+            values.put(CharacterEntry.COLUMN_NAME_LEVEL, Integer.valueOf(1));
+            db.insert(CharacterEntry.TABLE_NAME, null, values);
+            setResult(RESULT_OK, null);
+            finish();
+            return true;
+        }
         setResult(RESULT_CANCELED, null);
         return super.onOptionsItemSelected(item);
     }

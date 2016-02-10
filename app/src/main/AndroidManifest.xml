@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".activity.CharacterCreation"
                   android:label="@string/cc_activity_name"
+			      android:parentActivityName="com.akg.dandy4e.activity.CharacterSelection"
             ></activity>
     </application>
 
