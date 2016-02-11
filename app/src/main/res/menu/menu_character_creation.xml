@@ -8,5 +8,5 @@
         android:orderInCategory="1"
         app:showAsAction="always"
         android:title="@string/action_accept"
-        android:icon="@drawable/ic_done_black_18dp"/>
+        android:icon="@drawable/ic_done"/>
 </menu>

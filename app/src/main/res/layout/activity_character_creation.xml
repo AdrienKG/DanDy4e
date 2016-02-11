@@ -7,7 +7,8 @@
         android:paddingLeft="@dimen/layout_horizontal_margin"
         android:paddingTop="@dimen/layout_vertical_margin"
         android:paddingRight="@dimen/layout_horizontal_margin"
-        android:paddingBottom="@dimen/layout_vertical_margin">
+        android:paddingBottom="@dimen/layout_vertical_margin"
+     >
 
      <TextView
          android:id="@+id/cc_name_label"
@@ -31,7 +32,7 @@
          android:labelFor="@+id/acc_race_field"
          android:text="@string/race_label"
          android:layout_below="@+id/cc_name_label"
-         style="@style/cc_label_not_first"/>
+         style="@style/cc_label"/>
 
      <EditText
          android:id="@+id/cc_race_field"
@@ -41,17 +42,17 @@
          style="@style/cc_text_field"/>
 
      <TextView
-         android:id="@+id/acc_class_label"
+         android:id="@+id/cc_class_label"
          android:labelFor="@+id/cc_class_field"
          android:text="@string/class_label"
          android:layout_below="@+id/cc_race_label"
-         style="@style/cc_label_not_first"/>
+         style="@style/cc_label"/>
 
      <EditText
-         android:id="@+id/acc_class_field"
+         android:id="@+id/cc_class_field"
          android:inputType="textCapWords"
-         android:layout_alignTop="@+id/acc_class_label"
-         android:layout_alignBottom="@+id/acc_class_label"
+         android:layout_alignTop="@+id/cc_class_label"
+         android:layout_alignBottom="@+id/cc_class_label"
          style="@style/cc_text_field"/>
 
  </RelativeLayout>
