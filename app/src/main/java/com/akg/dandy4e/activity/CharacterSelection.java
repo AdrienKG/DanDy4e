@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarActivity;
 import android.view.ActionMode;
 import android.view.Menu;
@@ -95,6 +96,15 @@ public class CharacterSelection extends ActionBarActivity {
 
         });
         refreshCharacterList();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.cs_fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), CharacterCreation.class);
+                startActivityForResult(intent, 1);
+            }
+        });
     }
 
     @Override

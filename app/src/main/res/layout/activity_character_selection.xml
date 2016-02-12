@@ -20,7 +20,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_margin="16dp"
         android:clickable="true"
-        android:src="@drawable/ic_add" />
+        android:src="@drawable/ic_add"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignBottom="@+id/cs_characterList"
+        android:layout_alignEnd="@+id/cs_characterList"
+        android:id="@+id/cs_fab"/>
 </RelativeLayout>
