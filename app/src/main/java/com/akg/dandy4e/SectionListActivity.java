@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 
 import android.view.MenuItem;
 
@@ -20,15 +17,15 @@ import android.view.MenuItem;
  * item details side-by-side using two vertical panes.
  * <p/>
  * The activity makes heavy use of fragments. The list of items is a
- * {@link DetailListFragment} and the item details
+ * {@link SectionListFragment} and the item details
  * (if present) is a {@link SectionDetailFragment}.
  * <p/>
  * This activity also implements the required
- * {@link DetailListFragment.Callbacks} interface
+ * {@link SectionListFragment.Callbacks} interface
  * to listen for item selections.
  */
 public class SectionListActivity extends AppCompatActivity
-        implements DetailListFragment.Callbacks {
+        implements SectionListFragment.Callbacks {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -45,18 +42,10 @@ public class SectionListActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.dab_fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         // Show the Up button in the action bar.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        if (findViewById(R.id.detail_detail_container) != null) {
+        if (findViewById(R.id.section_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-large and
             // res/values-sw600dp). If this view is present, then the
@@ -65,7 +54,7 @@ public class SectionListActivity extends AppCompatActivity
 
             // In two-pane mode, list items should be given the
             // 'activated' state when touched.
-            ((DetailListFragment) getSupportFragmentManager()
+            ((SectionListFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.detail_list))
                     .setActivateOnItemClick(true);
         }
@@ -91,7 +80,7 @@ public class SectionListActivity extends AppCompatActivity
     }
 
     /**
-     * Callback method from {@link DetailListFragment.Callbacks}
+     * Callback method from {@link SectionListFragment.Callbacks}
      * indicating that the item with the given ID was selected.
      */
     @Override
@@ -105,7 +94,7 @@ public class SectionListActivity extends AppCompatActivity
             SectionDetailFragment fragment = new SectionDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.detail_detail_container, fragment)
+                    .replace(R.id.section_detail_container, fragment)
                     .commit();
 
         } else {

@@ -13,7 +13,7 @@ import com.akg.dandy4e.dummy.DummyContent;
 
 /**
  * A fragment representing a single Detail detail screen.
- * This fragment is either contained in a {@link DetailListActivity}
+ * This fragment is either contained in a {@link SectionListActivity}
  * in two-pane mode (on tablets) or a {@link SectionDetailActivity}
  * on handsets.
  */
@@ -27,7 +27,7 @@ public class SectionDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private SectionContent.SectionItem mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -44,12 +44,12 @@ public class SectionDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = SectionContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.content);
+                appBarLayout.setTitle(mItem.id);
             }
         }
     }
@@ -61,7 +61,8 @@ public class SectionDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.detail_detail)).setText(mItem.details);
+            ((TextView) rootView.findViewById(R.id.detail_detail)).setText("This is the " + mItem
+                    .id + " page.");
         }
 
         return rootView;

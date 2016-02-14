@@ -8,4 +8,6 @@
     <string name="action_new">Create New Character</string>
     <string name="cc_activity_name">Character Creation</string>
     <string name="action_accept">Create</string>
+    <string name="title_detail_list">Details</string>
+    <string name="title_detail_detail">Detail Detail</string>
 </resources>
