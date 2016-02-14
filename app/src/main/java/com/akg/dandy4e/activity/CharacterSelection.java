@@ -110,9 +110,11 @@ public class CharacterSelection extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_character_selction, menu);
-        return super.onCreateOptionsMenu(menu);
-
+        
+		//Don't need this anymore since we have the fab
+		//getMenuInflater().inflate(R.menu.menu_character_selction, menu);
+        //return super.onCreateOptionsMenu(menu);
+		return true;
     }
 
     @Override
