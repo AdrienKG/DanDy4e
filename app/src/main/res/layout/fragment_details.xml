@@ -1,0 +1,249 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fcdd_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/fcdd_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fcdd_llh_name"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:id="@+id/fcdd_name_label"
+                style="@style/fcdd_label_L"
+                android:labelFor="@+id/fcdd_name_field"
+                android:text="@string/label_name" />
+
+            <EditText
+                android:id="@+id/fcdd_name_field"
+                style="@style/fcdd_field"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/fcdd_llh_name"
+            android:id="@+id/fcdd_llh_lvl_xp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/fcdd_level_label"
+                style="@style/fcdd_label_L"
+                android:labelFor="@+id/fcdd_level_field"
+                android:text="@string/label_level"/>
+
+            <EditText
+                android:id="@+id/fcdd_level_field"
+                style="@style/fcdd_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_weight="0.4" />
+
+            <TextView
+                android:id="@+id/fcdd_experience_label"
+                style="@style/fcdd_label_L"
+                android:labelFor="@+id/fcdd_experience_field"
+                android:text="@string/label_experience"
+                android:layout_width="70dp" />
+
+            <EditText
+                android:id="@+id/fcdd_experience_field"
+                style="@style/fcdd_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fcdd_llh_race_class"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/fcdd_llh_lvl_xp">
+
+            <TextView
+                android:id="@+id/fcdd_race_label"
+                style="@style/fcdd_label_M"
+                android:labelFor="@+id/fcdd_race_field"
+                android:text="@string/label_race" />
+
+            <EditText
+                android:id="@+id/fcdd_race_field"
+                style="@style/fcdd_field"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"/>
+
+            <TextView
+                android:id="@+id/fcdd_class_label"
+                style="@style/fcdd_label_M"
+                android:labelFor="@+id/fcdd_class_field"
+                android:text="@string/label_class"
+                android:layout_width="70dp" />
+
+            <EditText
+                android:id="@+id/fcdd_class_field"
+                style="@style/fcdd_field"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fcdd_llh_paragon"
+            android:layout_below="@+id/fcdd_llh_race_class">
+
+            <TextView
+                android:id="@+id/fcdd_paragon_label"
+                style="@style/fcdd_label_M"
+                android:labelFor="@+id/fcdd_paragon_field"
+                android:text="@string/label_paragon" />
+
+            <EditText
+                android:id="@+id/fcdd_paragon_field"
+                style="@style/fcdd_field"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fcdd_llh_epic"
+            android:layout_below="@+id/fcdd_llh_paragon">
+
+            <TextView
+                android:id="@+id/fcdd_epic_label"
+                style="@style/fcdd_label_M"
+                android:labelFor="@+id/fcdd_epic_field"
+                android:text="@string/label_epic" />
+
+            <EditText
+                android:id="@+id/fcdd_epic_field"
+                style="@style/fcdd_field"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+        </LinearLayout>
+
+
+        <!--<TextView-->
+        <!--android:id="@+id/fcd_details_deity_label"-->
+        <!--style="@style/fcdLabel"-->
+        <!--android:labelFor="@+id/fcd_details_deity_field"-->
+        <!--android:text="@string/label_deity"/>-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/fcd_details_deity_field"-->
+        <!--style="@style/fcdd_field"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="textCapWords"/>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/fcd_details_weight_height_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/fcd_details_weight_label"-->
+        <!--style="@style/fcdLabel"-->
+        <!--android:labelFor="@+id/fcd_details_weight_field"-->
+        <!--android:text="@string/label_weight"/>-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/fcd_details_weight_field"-->
+        <!--style="@style/fcdd_field"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:inputType="number"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/fcd_details_height_label"-->
+        <!--style="@style/fcdLabelExtra"-->
+        <!--android:labelFor="@+id/fcd_details_height_field"-->
+        <!--android:text="@string/label_height"/>-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/fcd_details_height_field"-->
+        <!--style="@style/fcdd_field"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:inputType="number"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/fcd_details_size_vision_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_alignParentBottom="false">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/fcd_details_size_label"-->
+        <!--style="@style/fcdLabel"-->
+        <!--android:labelFor="@+id/fcd_details_size_field"-->
+        <!--android:text="@string/label_size"/>-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/fcd_details_size_field"-->
+        <!--style="@style/fcdDetailsField"-->
+        <!--android:inputType="textCapWords"-->
+        <!--android:layout_weight="1"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/fcd_details_vision_label"-->
+        <!--style="@style/fcdLabelExtra"-->
+        <!--android:labelFor="@+id/fcd_details_vision_field"-->
+        <!--android:text="@string/label_vision"/>-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/fcd_details_vision_field"-->
+        <!--style="@style/fcdDetailsField"-->
+        <!--android:inputType="textCapWords"-->
+        <!--android:layout_weight="1"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/fcd_details_misc_label"-->
+        <!--style="@style/fcdLabel"-->
+        <!--android:layout_alignBottom="@+id/fcd_details_misc_field"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_below="@+id/fcd_details_size_vision_layout"-->
+        <!--android:labelFor="@+id/fcd_details_misc_field"-->
+        <!--android:text="@string/label_misc"/>-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/fcd_details_misc_field"-->
+        <!--style="@style/fcdDetailsFullField"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_below="@+id/fcd_details_size_vision_layout"-->
+        <!--android:inputType="textMultiLine"-->
+        <!--android:lines="6"-->
+        <!--android:layout_toEndOf="@id/fcd_details_misc_label" />-->
+    </RelativeLayout>
+</ScrollView>
