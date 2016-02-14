@@ -1,0 +1,10 @@
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          android:id="@+id/detail_list"
+          android:name="com.akg.dandy4e.DetailListFragment"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          tools:context="com.akg.dandy4e.DetailListActivity"
+          tools:layout="@android:layout/list_content"/>
