@@ -14,6 +14,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.akg.dandy4e.SectionListActivity;
 import com.akg.dandy4e.R;
 import com.akg.dandy4e.activity.adapters.CharacterSelectionListViewAdapter;
 import com.akg.dandy4e.database.CharacterReaderContract.CharacterEntry;
@@ -89,8 +90,8 @@ public class CharacterSelection extends ActionBarActivity {
 
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-//                Intent intent = new Intent(arg1.getContext(), CharacterDetailListActivity.class);
-//                startActivityForResult(intent, 1);
+                Intent intent = new Intent(arg1.getContext(), SectionListActivity.class);
+                startActivityForResult(intent, 1);
             }
 
 

@@ -24,7 +24,7 @@
         android:src="@drawable/ic_add"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:id="@+id/cs_fab"
         android:layout_alignBottom="@+id/cs_characterList"
-        android:layout_alignEnd="@+id/cs_characterList"
-        android:id="@+id/cs_fab"/>
+        android:layout_alignEnd="@+id/cs_characterList"/>
 </RelativeLayout>

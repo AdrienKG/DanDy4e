@@ -17,10 +17,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.CharacterCreation"
-                  android:label="@string/cc_activity_name"
-			      android:parentActivityName="com.akg.dandy4e.activity.CharacterSelection"
-            ></activity>
+        <activity
+            android:name=".activity.CharacterCreation"
+            android:label="@string/cc_activity_name"
+            android:parentActivityName=".activity.CharacterSelection" />
+        <activity
+            android:name=".SectionListActivity"
+            android:label="@string/title_detail_list"
+            android:parentActivityName=".activity.CharacterSelection"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akg.dandy4e.activity.CharacterSelection" />
+        </activity>
+        <activity
+            android:name=".SectionDetailActivity"
+            android:label="@string/title_detail_detail"
+            android:parentActivityName=".SectionListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SectionListActivity" />
+        </activity>
     </application>
 
 </manifest>
