@@ -10,4 +10,8 @@
     <string name="action_accept">Create</string>
     <string name="title_detail_list">Details</string>
     <string name="title_detail_detail">Detail Detail</string>
+    <string name="experience_label">XP:</string>
+    <string name="paragon_label">Paragon:</string>
+    <string name="epic_label">Epic:</string>
+    <string name="misc_label">Misc:</string>
 </resources>
