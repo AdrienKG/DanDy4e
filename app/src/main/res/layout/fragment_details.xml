@@ -26,7 +26,7 @@
 
         <TextView
             android:id="@+id/fdet_level_label"
-            style="@style/fdet_label_L"
+            style="@style/fdet_label_M"
             android:labelFor="@+id/fdet_level_field"
             android:text="@string/level_label"
             android:layout_below="@+id/fdet_name_label"/>
@@ -37,22 +37,27 @@
             android:inputType="number"
             android:layout_below="@+id/fdet_name_field"
             android:layout_alignTop="@+id/fdet_level_label"
-            android:layout_alignBottom="@+id/fdet_level_label"/>
+            android:layout_alignBottom="@+id/fdet_level_label"
+			android:layout_alignParentEnd="false"
+			android:paddingRight="50dp"/>
 
         <TextView
             android:id="@+id/fdet_experience_label"
-            style="@style/fdet_label_L"
+            style="@style/fdet_label_M"
             android:labelFor="@+id/fdet_experience_field"
             android:text="@string/experience_label"
-            android:layout_below="@+id/fdet_level_label"/>
+            android:layout_below="@+id/fdet_name_label"
+			android:layout_toEndOf="@+id/fdet_level_field"
+			android:layout_alignParentStart="false"/>
 
         <EditText
             android:id="@+id/fdet_experience_field"
             style="@style/fdet_field"
             android:inputType="number"
-            android:layout_below="@+id/fdet_level_field"
+            android:layout_below="@+id/fdet_name_field"
             android:layout_alignTop="@+id/fdet_experience_label"
-            android:layout_alignBottom="@+id/fdet_experience_label"/>
+            android:layout_alignBottom="@+id/fdet_experience_label"
+			android:layout_toEndOf="@+id/fdet_experience_label"/>
 
         <TextView
             android:id="@+id/fdet_race_label"
