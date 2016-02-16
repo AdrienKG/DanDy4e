@@ -26,6 +26,7 @@ import java.util.List;
 
 public class CharacterSelection extends ActionBarActivity {
 
+	private CharacterReaderDbHelper helper = null;
     private SQLiteDatabase db = null;
 
     @Override
@@ -33,7 +34,8 @@ public class CharacterSelection extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_selection);
 
-        db = new CharacterReaderDbHelper(this).getWritableDatabase();
+		helper = new CharacterReaderDbHelper(this);
+        db = helper.getWritableDatabase();
 
         final ListView characterList = (ListView) findViewById(R.id.cs_characterList);
         registerForContextMenu(characterList);
@@ -109,16 +111,6 @@ public class CharacterSelection extends ActionBarActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        
-		//Don't need this anymore since we have the fab
-		//getMenuInflater().inflate(R.menu.menu_character_selction, menu);
-        //return super.onCreateOptionsMenu(menu);
-		return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -144,21 +136,8 @@ public class CharacterSelection extends ActionBarActivity {
     private void refreshCharacterList() {
         final ListView characterList = (ListView) findViewById(R.id.cs_characterList);
         final List<Character> listOfNames = new ArrayList<Character>();
-        String[] projection = {CharacterEntry._ID,
-                CharacterEntry.COLUMN_NAME_NAME,
-                CharacterEntry.COLUMN_NAME_RACE,
-                CharacterEntry.COLUMN_NAME_CLASS,
-                CharacterEntry.COLUMN_NAME_LEVEL};
-
-        Cursor c = db.query(
-                CharacterEntry.TABLE_NAME,  // The table to query
-                projection,                               // The columns to return
-                null,                                // The columns for the WHERE clause
-                null,                            // The values for the WHERE clause
-                null,                                     // don't group the rows
-                null,                                     // don't filter by row groups
-                null                                 // The sort order
-        );
+        
+        Cursor c = helper.getCharacters(db);
 
         c.moveToFirst();
         for (int i = 0; i < c.getCount(); i++) {

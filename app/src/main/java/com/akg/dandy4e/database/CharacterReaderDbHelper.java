@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.akg.dandy4e.database.CharacterReaderContract.CharacterEntry;
+import android.database.*;
 
 public class CharacterReaderDbHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
@@ -28,6 +29,7 @@ public class CharacterReaderDbHelper extends SQLiteOpenHelper {
     public CharacterReaderDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+	
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_ENTRIES);
     }
@@ -40,4 +42,22 @@ public class CharacterReaderDbHelper extends SQLiteOpenHelper {
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
     }
+	
+	public Cursor getCharacters(SQLiteDatabase db) {
+		String[] projection = {CharacterEntry._ID,
+			CharacterEntry.COLUMN_NAME_NAME,
+			CharacterEntry.COLUMN_NAME_RACE,
+			CharacterEntry.COLUMN_NAME_CLASS,
+			CharacterEntry.COLUMN_NAME_LEVEL};
+
+        return db.query(
+			CharacterEntry.TABLE_NAME,  // The table to query
+			projection,                               // The columns to return
+			null,                                // The columns for the WHERE clause
+			null,                            // The values for the WHERE clause
+			null,                                     // don't group the rows
+			null,                                     // don't filter by row groups
+			null                                 // The sort order
+        );
+	}
 }
