@@ -133,6 +133,7 @@
             android:layout_below="@+id/fdet_epic_field"
             android:layout_alignBottom="@+id/fdet_misc_label"
             android:layout_alignTop="@+id/fdet_misc_label"
-            android:inputType="textMultiLine"/>
+            android:inputType="textMultiLine"
+			android:textAlignment="textStart"/>
     </RelativeLayout>
 </ScrollView>

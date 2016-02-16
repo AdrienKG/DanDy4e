@@ -57,13 +57,7 @@ public class SectionDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_section_detail, container, false);
-
-        // Show the dummy content as text in a TextView.
-        if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.detail_detail)).setText("This is the " + mItem
-                    .id + " page.");
-        }
+        View rootView = inflater.inflate(R.layout.fragment_details, container, false);
 
         return rootView;
     }
