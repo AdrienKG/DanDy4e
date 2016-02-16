@@ -53,6 +53,7 @@
         <item name="android:layout_alignParentEnd">true</item>
         <item name="android:layout_toEndOf">@id/fdet_paragon_label</item>
 		<item name="android:textAlignment">center</item>
+		<item name="android:focusable">false</item>
     </style>
     
     <style name="AppTheme.NoActionBar">
