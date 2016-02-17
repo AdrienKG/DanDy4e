@@ -8,6 +8,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.view.MenuItem;
+import android.view.*;
+import android.widget.*;
 
 /**
  * An activity representing a single Detail detail screen. This
@@ -31,12 +33,25 @@ public class SectionDetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+				ViewGroup vg = (ViewGroup) findViewById(R.layout.fragment_details);
 				FloatingActionButton fab = (FloatingActionButton) view;
 				if (fab.getDrawable().getConstantState().equals(getResources().getDrawable(R.drawable.ic_mode_edit).getConstantState())) {
                 	fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_clear));
+					for (int i = 0; i < vg.getChildCount(); i++) {
+						View child = vg.getChildAt(i);
+						if (child instanceof EditText) {
+							((EditText) child).setFocusable(true);
+						}
+					}
 				}
 				else {
 					fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_mode_edit));
+					for (int i = 0; i < vg.getChildCount(); i++) {
+						View child = vg.getChildAt(i);
+						if (child instanceof EditText) {
+							((EditText) child).setFocusable(false);
+						}
+					}
 				}
             }
         });
