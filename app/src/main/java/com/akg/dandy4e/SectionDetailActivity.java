@@ -31,7 +31,13 @@ public class SectionDetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+				FloatingActionButton fab = (FloatingActionButton) view;
+				if (fab.getDrawable().getConstantState().equals(getResources().getDrawable(R.drawable.ic_mode_edit).getConstantState())) {
+                	fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_clear));
+				}
+				else {
+					fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_mode_edit));
+				}
             }
         });
 
