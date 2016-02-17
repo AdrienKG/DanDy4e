@@ -8,7 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
+import android.database.sqlite.*;
+import com.akg.dandy4e.database.*;
+import android.database.*;
+import com.akg.dandy4e.database.CharacterReaderContract.CharacterEntry;
 /**
  * A fragment representing a single Detail detail screen.
  * This fragment is either contained in a {@link SectionListActivity}
@@ -56,7 +59,15 @@ public class SectionDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(mItem.fragment, container, false);
-
+		
+		if (mItem.fragment == R.layout.fragment_details) {
+			SQLiteDatabase db = new CharacterReaderDbHelper(rootView.getContext()).getWritableDatabase();
+			Cursor c = new CharacterReaderDbHelper(rootView.getContext()).getCharacters(db);
+			
+			final TextView tvName = (TextView) rootView.findViewById(R.id.fdet_name_field);
+			tvName.setText(c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_NAME)));
+		}
+		
         return rootView;
     }
 }
