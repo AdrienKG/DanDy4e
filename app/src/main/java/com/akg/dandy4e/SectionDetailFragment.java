@@ -61,11 +61,11 @@ public class SectionDetailFragment extends Fragment {
         View rootView = inflater.inflate(mItem.fragment, container, false);
 		
 		if (mItem.fragment == R.layout.fragment_details) {
-			SQLiteDatabase db = new CharacterReaderDbHelper(rootView.getContext()).getWritableDatabase();
-			Cursor c = new CharacterReaderDbHelper(rootView.getContext()).getCharacters(db);
+			SQLiteDatabase db = CharacterReaderDbHelper.getSingleton(null).getWritableDatabase();
+			Cursor c = CharacterReaderDbHelper.getSingleton(null).getCharacters(db);
 			
 			final TextView tvName = (TextView) rootView.findViewById(R.id.fdet_name_field);
-			tvName.setText(c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_NAME)));
+			//tvName.setText(c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_NAME)));
 		}
 		
         return rootView;

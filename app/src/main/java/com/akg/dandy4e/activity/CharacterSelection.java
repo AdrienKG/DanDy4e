@@ -26,7 +26,6 @@ import java.util.List;
 
 public class CharacterSelection extends ActionBarActivity {
 
-	private CharacterReaderDbHelper helper = null;
     private SQLiteDatabase db = null;
 
     @Override
@@ -34,8 +33,7 @@ public class CharacterSelection extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_selection);
 
-		helper = new CharacterReaderDbHelper(this);
-        db = helper.getWritableDatabase();
+        db = CharacterReaderDbHelper.getSingleton(this).getWritableDatabase();
 
         final ListView characterList = (ListView) findViewById(R.id.cs_characterList);
         registerForContextMenu(characterList);
@@ -137,7 +135,7 @@ public class CharacterSelection extends ActionBarActivity {
         final ListView characterList = (ListView) findViewById(R.id.cs_characterList);
         final List<Character> listOfNames = new ArrayList<Character>();
         
-        Cursor c = helper.getCharacters(db);
+        Cursor c = CharacterReaderDbHelper.getSingleton(this).getCharacters(db);
 
         c.moveToFirst();
         for (int i = 0; i < c.getCount(); i++) {

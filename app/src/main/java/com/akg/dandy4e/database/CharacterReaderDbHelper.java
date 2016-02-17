@@ -8,6 +8,7 @@ import com.akg.dandy4e.database.CharacterReaderContract.CharacterEntry;
 import android.database.*;
 
 public class CharacterReaderDbHelper extends SQLiteOpenHelper {
+	private static CharacterReaderDbHelper singleton = null;
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "CharacterReader.db";
@@ -30,9 +31,16 @@ public class CharacterReaderDbHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_ENTRIES =
         "DROP TABLE IF EXISTS " + CharacterEntry.TABLE_NAME;
     
-    public CharacterReaderDbHelper(Context context) {
+    private CharacterReaderDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+	
+	public static CharacterReaderDbHelper getSingleton(Context context) {
+		if (singleton == null) {
+			singleton = new CharacterReaderDbHelper(context);
+		}
+		return singleton;
+	}
 	
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_ENTRIES);

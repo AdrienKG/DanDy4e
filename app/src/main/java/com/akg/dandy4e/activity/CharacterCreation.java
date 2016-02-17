@@ -19,7 +19,7 @@ public class CharacterCreation  extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_creation);
 
-        db = new CharacterReaderDbHelper(this).getWritableDatabase();
+        db = CharacterReaderDbHelper.getSingleton(this).getWritableDatabase();
     }
 
     @Override
