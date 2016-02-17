@@ -9,7 +9,7 @@ import android.database.*;
 
 public class CharacterReaderDbHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
-    public static final int DATABASE_VERSION = 3;
+    public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "CharacterReader.db";
 
     private static final String TEXT_TYPE = " TEXT";
@@ -21,7 +21,11 @@ public class CharacterReaderDbHelper extends SQLiteOpenHelper {
         CharacterEntry.COLUMN_NAME_NAME + TEXT_TYPE + COMMA_SEP +
         CharacterEntry.COLUMN_NAME_RACE + TEXT_TYPE + COMMA_SEP +
         CharacterEntry.COLUMN_NAME_CLASS + TEXT_TYPE + COMMA_SEP +
-        CharacterEntry.COLUMN_NAME_LEVEL + INTEGER_TYPE + " )";
+		CharacterEntry.COLUMN_NAME_LEVEL + INTEGER_TYPE  + COMMA_SEP + 
+		CharacterEntry.COLUMN_NAME_XP + INTEGER_TYPE  + COMMA_SEP + 
+		CharacterEntry.COLUMN_NAME_EPIC + TEXT_TYPE  + COMMA_SEP + 
+		CharacterEntry.COLUMN_NAME_PARAGON + TEXT_TYPE  + COMMA_SEP + 
+		CharacterEntry.COLUMN_NAME_MISC + TEXT_TYPE  + " )";
 
     private static final String SQL_DELETE_ENTRIES =
         "DROP TABLE IF EXISTS " + CharacterEntry.TABLE_NAME;

@@ -15,5 +15,9 @@ public final class CharacterReaderContract {
         public static final String COLUMN_NAME_RACE = "race";
         public static final String COLUMN_NAME_CLASS = "class";
         public static final String COLUMN_NAME_LEVEL = "level";
+		public static final String COLUMN_NAME_XP = "xp";
+		public static final String COLUMN_NAME_EPIC = "epic";
+		public static final String COLUMN_NAME_PARAGON = "paragon";
+		public static final String COLUMN_NAME_MISC = "misc";
     }
 }

@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.akg.dandy4e.dummy.DummyContent;
-
 /**
  * A fragment representing a single Detail detail screen.
  * This fragment is either contained in a {@link SectionListActivity}
