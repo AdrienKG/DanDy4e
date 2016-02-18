@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.database.sqlite.*;
 import com.akg.dandy4e.database.*;
@@ -62,10 +63,12 @@ public class SectionDetailFragment extends Fragment {
 		
 		if (mItem.fragment == R.layout.fragment_details) {
 			SQLiteDatabase db = CharacterReaderDbHelper.getSingleton(null).getWritableDatabase();
-			Cursor c = CharacterReaderDbHelper.getSingleton(null).getCharacters(db);
-			
-			final TextView tvName = (TextView) rootView.findViewById(R.id.fdet_name_field);
-			//tvName.setText(c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_NAME)));
+			Cursor c = CharacterReaderDbHelper.getSingleton(null).getCharacterDetails(db, "Adrien");
+
+            if (c.moveToFirst()) {
+                final EditText tvName = (EditText) rootView.findViewById(R.id.fdet_name_field);
+                tvName.setText(c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_NAME)));
+            }
 		}
 		
         return rootView;

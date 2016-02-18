@@ -72,4 +72,28 @@ public class CharacterReaderDbHelper extends SQLiteOpenHelper {
 			null                                 // The sort order
         );
 	}
+
+    public Cursor getCharacterDetails(SQLiteDatabase db, String id) {
+        String[] projection = {CharacterEntry._ID,
+                CharacterEntry.COLUMN_NAME_NAME,
+                CharacterEntry.COLUMN_NAME_RACE,
+                CharacterEntry.COLUMN_NAME_CLASS,
+                CharacterEntry.COLUMN_NAME_LEVEL,
+                CharacterEntry.COLUMN_NAME_XP,
+                CharacterEntry.COLUMN_NAME_EPIC,
+                CharacterEntry.COLUMN_NAME_PARAGON,
+                CharacterEntry.COLUMN_NAME_MISC};
+
+        return db.query(
+                CharacterEntry.TABLE_NAME,  // The table to query
+                projection,                               // The columns to return
+                CharacterEntry.COLUMN_NAME_NAME + " = ?",                                // The
+                // columns for the
+                // WHERE clause
+                new String[]{id},                            // The values for the WHERE clause
+                null,                                     // don't group the rows
+                null,                                     // don't filter by row groups
+                null                                 // The sort order
+        );
+    }
 }
