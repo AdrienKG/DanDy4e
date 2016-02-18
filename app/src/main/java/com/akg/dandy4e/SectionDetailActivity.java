@@ -33,19 +33,21 @@ public class SectionDetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-				ViewGroup vg = (ViewGroup) findViewById(R.layout.fragment_details);
+				ViewGroup vg = (RelativeLayout) findViewById(R.id.fdet_rl);
 				FloatingActionButton fab = (FloatingActionButton) view;
-				if (fab.getDrawable().getConstantState().equals(getResources().getDrawable(R.drawable.ic_mode_edit).getConstantState())) {
-                	fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_clear));
+				if (fab.getDrawable().getConstantState().equals(getResources().getDrawable(R
+                        .drawable.ic_mode_edit, view.getContext().getTheme()).getConstantState())) {
+                	fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_clear, view.getContext().getTheme()));
 					for (int i = 0; i < vg.getChildCount(); i++) {
 						View child = vg.getChildAt(i);
 						if (child instanceof EditText) {
-							((EditText) child).setFocusable(true);
+							((EditText) child).setFocusableInTouchMode(true);
+                            ((EditText) child).setFocusable(true);
 						}
 					}
 				}
 				else {
-					fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_mode_edit));
+					fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_mode_edit, view.getContext().getTheme()));
 					for (int i = 0; i < vg.getChildCount(); i++) {
 						View child = vg.getChildAt(i);
 						if (child instanceof EditText) {
