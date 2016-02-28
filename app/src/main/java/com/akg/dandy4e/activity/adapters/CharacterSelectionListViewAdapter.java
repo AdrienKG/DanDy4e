@@ -33,11 +33,19 @@ public class CharacterSelectionListViewAdapter extends ArrayAdapter<Character> {
         final TextView tvLevel = (TextView) convertView.findViewById(R.id.cslvr_level);
         
         final Character item = modelItems.get(position);
-        
+
         tvName.setText(item.getCharacterName());
         tvRace.setText("Race: " + item.getCharacterRace());
         tvClass.setText("Class: " + item.getCharacterClass());
         tvLevel.setText("Level: " + item.getCharacterLevel().toString());
         return convertView;
+    }
+
+    public Long getDBID(int position) {
+        Character item = modelItems.get(position);
+        if (item != null) {
+            return item.getDBID();
+        }
+        return Long.valueOf(-1);
     }
 }

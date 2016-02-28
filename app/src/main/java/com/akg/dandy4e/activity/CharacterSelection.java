@@ -91,6 +91,8 @@ public class CharacterSelection extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 Intent intent = new Intent(arg1.getContext(), SectionListActivity.class);
+                intent.putExtra(CharacterEntry.COLUMN_NAME_ENTRY_ID,
+                        ((CharacterSelectionListViewAdapter) arg0.getAdapter()).getDBID(arg2));
                 startActivityForResult(intent, 1);
             }
 
