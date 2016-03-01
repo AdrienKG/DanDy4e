@@ -2,6 +2,8 @@ package com.akg.dandy4e.activity.adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.databinding.DataBindingUtil;
+import android.databinding.tool.DataBinder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.akg.dandy4e.R;
+import com.akg.dandy4e.activity.CharacterSelection;
 import com.akg.dandy4e.database.object.Character;
 
 import java.util.List;
@@ -26,7 +29,7 @@ public class CharacterSelectionListViewAdapter extends ArrayAdapter<Character> {
     public View getView(int position, View convertView, ViewGroup parent) {
         final LayoutInflater inflater = ((Activity)context).getLayoutInflater();
         convertView = inflater.inflate(R.layout.activity_character_selection_list_view_row, parent, false);
-        
+        ActivityCharacterSelec binding = DataBindingUtil.inflate(inflater, R.layout.activity_character_selection_list_view_row, parent, false);
         final TextView tvName = (TextView) convertView.findViewById(R.id.cslvr_name);
         final TextView tvRace = (TextView) convertView.findViewById(R.id.cslvr_race);
         final TextView tvClass = (TextView) convertView.findViewById(R.id.cslvr_class);

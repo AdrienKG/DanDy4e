@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="character" type="com.akg.dandy4e.database.object.Character"/>
+    </data>
+<RelativeLayout
     android:id="@+id/cslvr_layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -9,11 +13,10 @@
                 android:paddingTop="@dimen/layout_vertical_margin"
                 android:paddingRight="@dimen/layout_horizontal_margin"
                 android:paddingBottom="@dimen/layout_vertical_margin">
-
     <TextView
         android:id="@+id/cslvr_name"
         android:layout_width="wrap_content"
-        android:text="@string/name_label"
+        android:text="@{character.characterName}"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -21,24 +24,25 @@
 
     <TextView
         android:id="@+id/cslvr_race"
-        android:text="@string/race_label"
+        android:text="@{character.characterRace}"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/cslvr_name"
         style="@style/cslvr_small_label"/>
 
     <TextView
         android:id="@+id/cslvr_class"
-        android:text="@string/class_label"
+        android:text="@{character.characterClass}"
         android:layout_toEndOf="@id/cslvr_race"
         android:layout_below="@+id/cslvr_name"
         style="@style/cslvr_small_label"/>
 
     <TextView
         android:id="@+id/cslvr_level"
-        android:text="@string/level_label"
+        android:text="@{character.characterLevel}"
         android:layout_toEndOf="@id/cslvr_class"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/cslvr_name"
         style="@style/cslvr_small_label"/>
 
 </RelativeLayout>
+    </layout>
