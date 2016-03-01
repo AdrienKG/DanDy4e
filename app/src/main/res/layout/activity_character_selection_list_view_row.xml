@@ -47,7 +47,7 @@
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/cslvr_name"
             android:layout_toEndOf="@id/cslvr_class"
-            android:text="@{character.characterLevel}"/>
+            android:text="@{String.valueOf(character.characterLevel)}"/>
 
     </RelativeLayout>
 </layout>

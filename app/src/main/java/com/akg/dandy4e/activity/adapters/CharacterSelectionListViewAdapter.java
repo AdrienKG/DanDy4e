@@ -29,7 +29,6 @@ public class CharacterSelectionListViewAdapter extends ArrayAdapter<Character> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-        convertView = inflater.inflate(R.layout.activity_character_selection_list_view_row, parent, false);
         ActivityCharacterSelectionListViewRowBinding binding = DataBindingUtil.inflate(inflater, R.layout.activity_character_selection_list_view_row, parent, false);
         binding.setCharacter(modelItems.get(position));
 //        final TextView tvName = (TextView) convertView.findViewById(R.id.cslvr_name);
@@ -43,7 +42,7 @@ public class CharacterSelectionListViewAdapter extends ArrayAdapter<Character> {
 //        tvRace.setText("Race: " + item.getCharacterRace());
 //        tvClass.setText("Class: " + item.getCharacterClass());
 //        tvLevel.setText("Level: " + item.getCharacterLevel().toString());
-        return convertView;
+        return binding.getRoot();
     }
 
     public Long getDBID(int position) {
