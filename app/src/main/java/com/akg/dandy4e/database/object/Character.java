@@ -1,6 +1,9 @@
 package com.akg.dandy4e.database.object;
 
-public class Character {
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+public class Character extends BaseObservable{
     private final Long dbID;
     private String characterName;
     private String characterRace;
@@ -19,6 +22,7 @@ public class Character {
         return dbID;
     }
 
+    @Bindable
     public String getCharacterName() {
         return characterName;
     }
@@ -27,6 +31,7 @@ public class Character {
         this.characterName = characterName;
     }
 
+    @Bindable
     public String getCharacterRace() {
         return characterRace;
     }
@@ -35,6 +40,7 @@ public class Character {
         this.characterRace = characterRace;
     }
 
+    @Bindable
     public String getCharacterClass() {
         return characterClass;
     }
@@ -43,6 +49,7 @@ public class Character {
         this.characterClass = characterClass;
     }
 
+    @Bindable
     public Integer getCharacterLevel() {
         return characterLevel;
     }

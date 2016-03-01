@@ -1,48 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+        xmlns:tools="http://schemas.android.com/tools">
+
     <data>
-        <variable name="character" type="com.akg.dandy4e.database.object.Character"/>
+        <variable
+            name="character"
+            type="com.akg.dandy4e.database.object.Character"/>
     </data>
-<RelativeLayout
-    android:id="@+id/cslvr_layout"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-                tools:context=".MainListViewAdapter"
-                android:paddingLeft="@dimen/layout_horizontal_margin"
-                android:paddingTop="@dimen/layout_vertical_margin"
-                android:paddingRight="@dimen/layout_horizontal_margin"
-                android:paddingBottom="@dimen/layout_vertical_margin">
-    <TextView
-        android:id="@+id/cslvr_name"
+
+    <RelativeLayout
+        android:id="@+id/cslvr_layout"
         android:layout_width="wrap_content"
-        android:text="@{character.characterName}"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:paddingBottom="@dimen/layout_vertical_margin"
+        android:paddingLeft="@dimen/layout_horizontal_margin"
+        android:paddingRight="@dimen/layout_horizontal_margin"
+        android:paddingTop="@dimen/layout_vertical_margin"
+        tools:context=".MainListViewAdapter">
 
-    <TextView
-        android:id="@+id/cslvr_race"
-        android:text="@{character.characterRace}"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/cslvr_name"
-        style="@style/cslvr_small_label"/>
+        <TextView
+            android:id="@+id/cslvr_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:text="@{character.characterName}"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <TextView
-        android:id="@+id/cslvr_class"
-        android:text="@{character.characterClass}"
-        android:layout_toEndOf="@id/cslvr_race"
-        android:layout_below="@+id/cslvr_name"
-        style="@style/cslvr_small_label"/>
+        <TextView
+            android:id="@+id/cslvr_race"
+            style="@style/cslvr_small_label"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/cslvr_name"
+            android:text="@{character.characterRace}"/>
 
-    <TextView
-        android:id="@+id/cslvr_level"
-        android:text="@{character.characterLevel}"
-        android:layout_toEndOf="@id/cslvr_class"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/cslvr_name"
-        style="@style/cslvr_small_label"/>
+        <TextView
+            android:id="@+id/cslvr_class"
+            style="@style/cslvr_small_label"
+            android:layout_below="@+id/cslvr_name"
+            android:layout_toEndOf="@id/cslvr_race"
+            android:text="@{character.characterClass}"/>
 
-</RelativeLayout>
-    </layout>
+        <TextView
+            android:id="@+id/cslvr_level"
+            style="@style/cslvr_small_label"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/cslvr_name"
+            android:layout_toEndOf="@id/cslvr_class"
+            android:text="@{character.characterLevel}"/>
+
+    </RelativeLayout>
+</layout>
