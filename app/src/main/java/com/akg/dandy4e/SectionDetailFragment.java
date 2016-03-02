@@ -1,6 +1,7 @@
 package com.akg.dandy4e;
 
 import android.app.Activity;
+import android.databinding.DataBindingUtil;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,10 @@ import android.database.sqlite.*;
 import com.akg.dandy4e.database.*;
 import android.database.*;
 import com.akg.dandy4e.database.CharacterReaderContract.CharacterEntry;
+import com.akg.dandy4e.database.object.*;
+import com.akg.dandy4e.database.object.Character;
+import com.akg.dandy4e.databinding.FragmentDetailsBinding;
+
 /**
  * A fragment representing a single Detail detail screen.
  * This fragment is either contained in a {@link SectionListActivity}
@@ -64,18 +69,16 @@ public class SectionDetailFragment extends Fragment {
 			Cursor c = CharacterReaderDbHelper.getSingleton(null).getCharacterDetails(db, "Adrien");
 
             if (c.moveToFirst()) {
-                Character character = new Character(
-                    c.getLong(c.getColumnIndex(CharacterEntry._ID)),
-                    c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_NAME)),
-                    c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_RACE)),
-                    c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_CLASS)),
-                    c.getInt(c.getColumnIndex(CharacterEntry.COLUMN_NAME_LEVEL))));
+                Character character = new Character(c.getLong(c.getColumnIndex(CharacterEntry._ID)),
+                        c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_NAME)),
+                        c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_RACE)),
+                        c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_CLASS)),
+                        c.getInt(c.getColumnIndex(CharacterEntry.COLUMN_NAME_LEVEL)));
                 FragmentDetailsBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false);
-                binding.setCharacter(modelItems.get(position));
+                binding.setCharacter(character);
                 return binding.getRoot();
             }
 		}
-		
         return inflater.inflate(R.layout.fragment_details, container);
     }
 }
