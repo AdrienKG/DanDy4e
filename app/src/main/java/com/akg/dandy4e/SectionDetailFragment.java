@@ -59,18 +59,23 @@ public class SectionDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(mItem.fragment, container, false);
-		
 		if (mItem.fragment == R.layout.fragment_details) {
 			SQLiteDatabase db = CharacterReaderDbHelper.getSingleton(null).getWritableDatabase();
 			Cursor c = CharacterReaderDbHelper.getSingleton(null).getCharacterDetails(db, "Adrien");
 
             if (c.moveToFirst()) {
-                final EditText tvName = (EditText) rootView.findViewById(R.id.fdet_name_field);
-                tvName.setText(c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_NAME)));
+                Character character = new Character(
+                    c.getLong(c.getColumnIndex(CharacterEntry._ID)),
+                    c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_NAME)),
+                    c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_RACE)),
+                    c.getString(c.getColumnIndex(CharacterEntry.COLUMN_NAME_CLASS)),
+                    c.getInt(c.getColumnIndex(CharacterEntry.COLUMN_NAME_LEVEL))));
+                FragmentDetailsBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false);
+                binding.setCharacter(modelItems.get(position));
+                return binding.getRoot();
             }
 		}
 		
-        return rootView;
+        return inflater.inflate(R.layout.fragment_details, container);
     }
 }

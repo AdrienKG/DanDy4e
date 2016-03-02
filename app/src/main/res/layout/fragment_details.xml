@@ -1,5 +1,11 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="character"
+            type="com.akg.dandy4e.database.object.Character"/>
+    </data>
+        
 <ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fdet_sv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,6 +28,7 @@
             android:inputType="textPersonName"
             android:layout_alignTop="@+id/fdet_name_label"
             android:layout_alignBottom="@+id/fdet_name_label"
+            android:text="@{character.characterName}"
             />
 
         <TextView
@@ -39,7 +46,8 @@
             android:layout_alignTop="@+id/fdet_level_label"
             android:layout_alignBottom="@+id/fdet_level_label"
 			android:layout_alignParentEnd="false"
-			android:paddingRight="50dp"/>
+			android:paddingRight="50dp"
+            android:text="@{String.valueOf(character.characterLevel)}"/>
 
         <TextView
             android:id="@+id/fdet_experience_label"
@@ -72,7 +80,8 @@
             android:inputType="textCapWords"
             android:layout_below="@+id/fdet_experience_field"
             android:layout_alignTop="@+id/fdet_race_label"
-            android:layout_alignBottom="@+id/fdet_race_label"/>
+            android:layout_alignBottom="@+id/fdet_race_label"
+            android:text="@{character.characterRace}"/>
 
         <TextView
             android:id="@+id/fdet_class_label"
@@ -87,7 +96,8 @@
             android:inputType="textCapWords"
             android:layout_below="@+id/fdet_race_field"
             android:layout_alignTop="@+id/fdet_class_label"
-            android:layout_alignBottom="@+id/fdet_class_label"/>
+            android:layout_alignBottom="@+id/fdet_class_label"
+            android:text="@{character.characterClass}"/>
 
         <TextView
             android:id="@+id/fdet_paragon_label"
@@ -137,3 +147,4 @@
 			android:textAlignment="textStart"/>
     </RelativeLayout>
 </ScrollView>
+</layout>
