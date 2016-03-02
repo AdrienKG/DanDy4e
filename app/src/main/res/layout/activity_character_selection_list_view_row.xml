@@ -30,42 +30,42 @@
 
         <TextView
             android:id="@+id/cslvr_race_label"
-            style="@style/cslvr_small_label"
+            style="@style/cslvr_label"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/cslvr_name"
             android:text="@string/race_label"/>
 
         <TextView
             android:id="@+id/cslvr_race_value"
-            style="@style/cslvr_small_label"
+            style="@style/cslvr_field"
             android:layout_below="@+id/cslvr_name"
             android:layout_toEndOf="@id/cslvr_race_label"
             android:text="@{character.characterRace}"/>
 
         <TextView
             android:id="@+id/cslvr_class_label"
-            style="@style/cslvr_small_label"
+            style="@style/cslvr_label"
             android:layout_below="@+id/cslvr_name"
             android:layout_toEndOf="@id/cslvr_race_value"
             android:text="@string/class_label"/>
 
         <TextView
             android:id="@+id/cslvr_class_value"
-            style="@style/cslvr_small_label"
+            style="@style/cslvr_field"
             android:layout_below="@+id/cslvr_name"
             android:layout_toEndOf="@id/cslvr_class_label"
             android:text="@{character.characterClass}"/>
 
         <TextView
             android:id="@+id/cslvr_level_label"
-            style="@style/cslvr_small_label"
+            style="@style/cslvr_label"
             android:layout_below="@+id/cslvr_name"
             android:layout_toEndOf="@id/cslvr_class_value"
             android:text="@string/level_label"/>
 
         <TextView
             android:id="@+id/cslvr_level_value"
-            style="@style/cslvr_small_label"
+            style="@style/cslvr_field"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/cslvr_name"
             android:layout_toEndOf="@id/cslvr_level_label"

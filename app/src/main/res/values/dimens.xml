@@ -5,6 +5,7 @@
     <dimen name="layout_horizontal_margin">15dp</dimen>
     <dimen name="layout_vertical_margin">15dp</dimen>
     <dimen name="component_horizontal_margin">10dp</dimen>
+    <dimen name="component_horizontal_margin_small">5dp</dimen>
     <dimen name="component_vertical_padding">15dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="app_bar_height">200dp</dimen>

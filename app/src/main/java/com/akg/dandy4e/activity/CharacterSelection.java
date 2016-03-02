@@ -3,7 +3,6 @@ package com.akg.dandy4e.activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarActivity;
@@ -17,7 +16,7 @@ import android.widget.ListView;
 
 import com.akg.dandy4e.SectionListActivity;
 import com.akg.dandy4e.R;
-import com.akg.dandy4e.activity.adapters.CharacterSelectionListViewAdapter;
+import com.akg.dandy4e.activity.adapters.CharacterSelectionRecyclerAdapter;
 import com.akg.dandy4e.database.CharacterReaderContract.CharacterEntry;
 import com.akg.dandy4e.database.CharacterReaderDbHelper;
 import com.akg.dandy4e.database.object.Character;
@@ -93,7 +92,7 @@ public class CharacterSelection extends ActionBarActivity {
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 Intent intent = new Intent(arg1.getContext(), SectionListActivity.class);
                 intent.putExtra(CharacterEntry.COLUMN_NAME_ENTRY_ID,
-                        ((CharacterSelectionListViewAdapter) arg0.getAdapter()).getDBID(arg2));
+                        ((CharacterSelectionRecyclerAdapter) arg0.getAdapter()).getDBID(arg2));
                 startActivityForResult(intent, 1);
             }
 
@@ -152,8 +151,8 @@ public class CharacterSelection extends ActionBarActivity {
         }
 
 //        final MainListViewAdapter arrayAdapter = new MainListViewAdapter(this, listOfNames);
-        final CharacterSelectionListViewAdapter arrayAdapter = new
-                CharacterSelectionListViewAdapter(this,
+        final CharacterSelectionRecyclerAdapter arrayAdapter = new
+                CharacterSelectionRecyclerAdapter(this,
                 listOfNames);
         characterList.setAdapter(arrayAdapter);
     }

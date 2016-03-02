@@ -5,10 +5,14 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="cslvr_small_label">
+    <style name="cslvr_label">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:layout_marginEnd">@dimen/component_horizontal_margin_small</item>
+    </style>
+
+    <style name="cslvr_field" parent="cslvr_label">
         <item name="android:layout_marginEnd">@dimen/component_horizontal_margin</item>
     </style>
 
