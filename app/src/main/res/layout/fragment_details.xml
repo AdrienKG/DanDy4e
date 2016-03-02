@@ -1,150 +1,152 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="character"
             type="com.akg.dandy4e.database.object.Character"/>
     </data>
-        
-<ScrollView
-    android:id="@+id/fdet_sv"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
 
-    <RelativeLayout
-        android:id="@+id/fdet_rl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <ScrollView
+        android:id="@+id/fdet_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/fdet_name_label"
-            style="@style/fdet_label_L"
-            android:labelFor="@+id/fdet_name_field"
-            android:text="@string/name_label"/>
+        <RelativeLayout
+            android:id="@+id/fdet_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/fdet_name_field"
-            style="@style/fdet_field"
-            android:inputType="textPersonName"
-            android:layout_alignTop="@+id/fdet_name_label"
-            android:layout_alignBottom="@+id/fdet_name_label"
-            android:text="@{character.characterName}"
-            />
+            <TextView
+                android:id="@+id/fdet_name_label"
+                style="@style/fdet_label_L"
+                android:labelFor="@+id/fdet_name_field"
+                android:text="@string/name_label"/>
 
-        <TextView
-            android:id="@+id/fdet_level_label"
-            style="@style/fdet_label_M"
-            android:labelFor="@+id/fdet_level_field"
-            android:text="@string/level_label"
-            android:layout_below="@+id/fdet_name_label"/>
+            <EditText
+                android:id="@+id/fdet_name_field"
+                style="@style/fdet_field"
+                android:layout_alignBottom="@+id/fdet_name_label"
+                android:layout_alignTop="@+id/fdet_name_label"
+                android:inputType="textPersonName"
+                android:text="@{character.characterName}"
+                />
 
-        <EditText
-            android:id="@+id/fdet_level_field"
-            style="@style/fdet_field"
-            android:inputType="number"
-            android:layout_below="@+id/fdet_name_field"
-            android:layout_alignTop="@+id/fdet_level_label"
-            android:layout_alignBottom="@+id/fdet_level_label"
-			android:layout_alignParentEnd="false"
-			android:paddingRight="50dp"
-            android:text="@{String.valueOf(character.characterLevel)}"/>
+            <TextView
+                android:id="@+id/fdet_level_label"
+                style="@style/fdet_label_M"
+                android:layout_below="@+id/fdet_name_label"
+                android:labelFor="@+id/fdet_level_field"
+                android:text="@string/level_label"/>
 
-        <TextView
-            android:id="@+id/fdet_experience_label"
-            style="@style/fdet_label_M"
-            android:labelFor="@+id/fdet_experience_field"
-            android:text="@string/experience_label"
-            android:layout_below="@+id/fdet_name_label"
-			android:layout_toEndOf="@+id/fdet_level_field"
-			android:layout_alignParentStart="false"/>
+            <EditText
+                android:id="@+id/fdet_level_field"
+                style="@style/fdet_field"
+                android:layout_alignBottom="@+id/fdet_level_label"
+                android:layout_alignParentEnd="false"
+                android:layout_alignTop="@+id/fdet_level_label"
+                android:layout_below="@+id/fdet_name_field"
+                android:inputType="number"
+                android:paddingRight="50dp"
+                android:text="@{String.valueOf(character.characterLevel)}"/>
 
-        <EditText
-            android:id="@+id/fdet_experience_field"
-            style="@style/fdet_field"
-            android:inputType="number"
-            android:layout_below="@+id/fdet_name_field"
-            android:layout_alignTop="@+id/fdet_experience_label"
-            android:layout_alignBottom="@+id/fdet_experience_label"
-			android:layout_toEndOf="@+id/fdet_experience_label"/>
+            <TextView
+                android:id="@+id/fdet_experience_label"
+                style="@style/fdet_label_M"
+                android:layout_alignParentStart="false"
+                android:layout_below="@+id/fdet_name_label"
+                android:layout_toEndOf="@+id/fdet_level_field"
+                android:labelFor="@+id/fdet_experience_field"
+                android:text="@string/experience_label"/>
 
-        <TextView
-            android:id="@+id/fdet_race_label"
-            style="@style/fdet_label_M"
-            android:labelFor="@+id/fdet_race_field"
-            android:text="@string/race_label"
-            android:layout_below="@+id/fdet_experience_label"/>
+            <EditText
+                android:id="@+id/fdet_experience_field"
+                style="@style/fdet_field"
+                android:layout_alignBottom="@+id/fdet_experience_label"
+                android:layout_alignTop="@+id/fdet_experience_label"
+                android:layout_below="@+id/fdet_name_field"
+                android:layout_toEndOf="@+id/fdet_experience_label"
+                android:inputType="number"/>
 
-        <EditText
-            android:id="@+id/fdet_race_field"
-            style="@style/fdet_field"
-            android:inputType="textCapWords"
-            android:layout_below="@+id/fdet_experience_field"
-            android:layout_alignTop="@+id/fdet_race_label"
-            android:layout_alignBottom="@+id/fdet_race_label"
-            android:text="@{character.characterRace}"/>
+            <TextView
+                android:id="@+id/fdet_race_label"
+                style="@style/fdet_label_M"
+                android:layout_below="@+id/fdet_experience_label"
+                android:labelFor="@+id/fdet_race_field"
+                android:text="@string/race_label"/>
 
-        <TextView
-            android:id="@+id/fdet_class_label"
-            style="@style/fdet_label_M"
-            android:labelFor="@+id/fdet_class_field"
-            android:text="@string/class_label"
-            android:layout_below="@+id/fdet_race_label"/>
+            <EditText
+                android:id="@+id/fdet_race_field"
+                style="@style/fdet_field"
+                android:layout_alignBottom="@+id/fdet_race_label"
+                android:layout_alignTop="@+id/fdet_race_label"
+                android:layout_below="@+id/fdet_experience_field"
+                android:inputType="textCapWords"
+                android:text="@{character.characterRace}"/>
 
-        <EditText
-            android:id="@+id/fdet_class_field"
-            style="@style/fdet_field"
-            android:inputType="textCapWords"
-            android:layout_below="@+id/fdet_race_field"
-            android:layout_alignTop="@+id/fdet_class_label"
-            android:layout_alignBottom="@+id/fdet_class_label"
-            android:text="@{character.characterClass}"/>
+            <TextView
+                android:id="@+id/fdet_class_label"
+                style="@style/fdet_label_M"
+                android:layout_below="@+id/fdet_race_label"
+                android:labelFor="@+id/fdet_class_field"
+                android:text="@string/class_label"/>
 
-        <TextView
-            android:id="@+id/fdet_paragon_label"
-            style="@style/fdet_label_M"
-            android:labelFor="@+id/fdet_paragon_field"
-            android:text="@string/paragon_label"
-            android:layout_below="@+id/fdet_class_label"/>
+            <EditText
+                android:id="@+id/fdet_class_field"
+                style="@style/fdet_field"
+                android:layout_alignBottom="@+id/fdet_class_label"
+                android:layout_alignTop="@+id/fdet_class_label"
+                android:layout_below="@+id/fdet_race_field"
+                android:inputType="textCapWords"
+                android:text="@{character.characterClass}"/>
 
-        <EditText
-            android:id="@+id/fdet_paragon_field"
-            style="@style/fdet_field"
-            android:inputType="textCapWords"
-            android:layout_below="@+id/fdet_class_field"
-            android:layout_alignTop="@+id/fdet_paragon_label"
-            android:layout_alignBottom="@+id/fdet_paragon_label"/>
+            <TextView
+                android:id="@+id/fdet_paragon_label"
+                style="@style/fdet_label_M"
+                android:layout_below="@+id/fdet_class_label"
+                android:labelFor="@+id/fdet_paragon_field"
+                android:text="@string/paragon_label"/>
 
-        <TextView
-            android:id="@+id/fdet_epic_label"
-            style="@style/fdet_label_M"
-            android:labelFor="@+id/fdet_epic_field"
-            android:text="@string/epic_label"
-            android:layout_below="@+id/fdet_paragon_label"/>
+            <EditText
+                android:id="@+id/fdet_paragon_field"
+                style="@style/fdet_field"
+                android:layout_alignBottom="@+id/fdet_paragon_label"
+                android:layout_alignTop="@+id/fdet_paragon_label"
+                android:layout_below="@+id/fdet_class_field"
+                android:inputType="textCapWords"/>
 
-        <EditText
-            android:id="@+id/fdet_epic_field"
-            style="@style/fdet_field"
-            android:inputType="textCapWords"
-            android:layout_below="@+id/fdet_paragon_field"
-            android:layout_alignBottom="@+id/fdet_epic_label"
-            android:layout_alignTop="@+id/fdet_epic_label"/>
+            <TextView
+                android:id="@+id/fdet_epic_label"
+                style="@style/fdet_label_M"
+                android:layout_below="@+id/fdet_paragon_label"
+                android:labelFor="@+id/fdet_epic_field"
+                android:text="@string/epic_label"/>
 
-        <TextView
-            android:id="@+id/fdet_misc_label"
-            style="@style/fdet_label_M"
-            android:labelFor="@+id/fdet_misc_field"
-            android:text="@string/misc_label"
-            android:layout_below="@+id/fdet_epic_label"
-            android:layout_alignParentBottom="true"/>
+            <EditText
+                android:id="@+id/fdet_epic_field"
+                style="@style/fdet_field"
+                android:layout_alignBottom="@+id/fdet_epic_label"
+                android:layout_alignTop="@+id/fdet_epic_label"
+                android:layout_below="@+id/fdet_paragon_field"
+                android:inputType="textCapWords"/>
 
-        <EditText
-            android:id="@+id/fdet_misc_field"
-            style="@style/fdet_field"
-            android:layout_below="@+id/fdet_epic_field"
-            android:layout_alignBottom="@+id/fdet_misc_label"
-            android:layout_alignTop="@+id/fdet_misc_label"
-            android:inputType="textMultiLine"
-			android:textAlignment="textStart"/>
-    </RelativeLayout>
-</ScrollView>
+            <TextView
+                android:id="@+id/fdet_misc_label"
+                style="@style/fdet_label_M"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/fdet_epic_label"
+                android:labelFor="@+id/fdet_misc_field"
+                android:text="@string/misc_label"/>
+
+            <EditText
+                android:id="@+id/fdet_misc_field"
+                style="@style/fdet_field"
+                android:layout_alignBottom="@+id/fdet_misc_label"
+                android:layout_alignTop="@+id/fdet_misc_label"
+                android:layout_below="@+id/fdet_epic_field"
+                android:inputType="textMultiLine"
+                android:textAlignment="textStart"/>
+        </RelativeLayout>
+    </ScrollView>
 </layout>

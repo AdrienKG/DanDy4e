@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.akg.dandy4e" >
+<manifest
+    package="com.akg.dandy4e"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activity.CharacterSelection"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.CharacterCreation"
             android:label="@string/cc_activity_name"
-            android:parentActivityName=".activity.CharacterSelection" />
+            android:parentActivityName=".activity.CharacterSelection"/>
         <activity
             android:name=".SectionListActivity"
             android:label="@string/title_detail_list"
             android:parentActivityName=".activity.CharacterSelection"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.akg.dandy4e.activity.CharacterSelection" />
+                android:value="com.akg.dandy4e.activity.CharacterSelection"/>
         </activity>
         <activity
             android:name=".SectionDetailActivity"
             android:label="@string/title_detail_detail"
             android:parentActivityName=".SectionListActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".SectionListActivity" />
+                android:value=".SectionListActivity"/>
         </activity>
     </application>
 

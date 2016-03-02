@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/cs_rl"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".CharacterSelction"
-    android:id="@+id/cs_rl">
+    tools:context=".CharacterSelction">
 
     <ListView
         android:id="@+id/cs_characterList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
     </ListView>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/cs_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cs_characterList"
+        android:layout_alignEnd="@+id/cs_characterList"
         android:layout_gravity="bottom"
-        android:clickable="true"
-        android:src="@drawable/ic_add"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:id="@+id/cs_fab"
-        android:layout_alignBottom="@+id/cs_characterList"
-        android:layout_alignEnd="@+id/cs_characterList"/>
+        android:clickable="true"
+        android:src="@drawable/ic_add"/>
 </RelativeLayout>

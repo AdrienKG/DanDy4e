@@ -1,20 +1,18 @@
 package com.akg.dandy4e;
 
 import android.app.Activity;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.databinding.DataBindingUtil;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.database.sqlite.*;
-import com.akg.dandy4e.database.*;
-import android.database.*;
+
 import com.akg.dandy4e.database.CharacterReaderContract.CharacterEntry;
-import com.akg.dandy4e.database.object.*;
+import com.akg.dandy4e.database.CharacterReaderDbHelper;
 import com.akg.dandy4e.database.object.Character;
 import com.akg.dandy4e.databinding.FragmentDetailsBinding;
 
@@ -64,9 +62,9 @@ public class SectionDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-		if (mItem.fragment == R.layout.fragment_details) {
-			SQLiteDatabase db = CharacterReaderDbHelper.getSingleton(null).getWritableDatabase();
-			Cursor c = CharacterReaderDbHelper.getSingleton(null).getCharacterDetails(db, "Adrien");
+        if (mItem.fragment == R.layout.fragment_details) {
+            SQLiteDatabase db = CharacterReaderDbHelper.getSingleton(null).getWritableDatabase();
+            Cursor c = CharacterReaderDbHelper.getSingleton(null).getCharacterDetails(db, "Adrien");
 
             if (c.moveToFirst()) {
                 Character character = new Character(c.getLong(c.getColumnIndex(CharacterEntry._ID)),
@@ -78,7 +76,7 @@ public class SectionDetailFragment extends Fragment {
                 binding.setCharacter(character);
                 return binding.getRoot();
             }
-		}
+        }
         return inflater.inflate(R.layout.fragment_details, container);
     }
 }

@@ -44,14 +44,14 @@ public class SectionContent {
     public static class SectionItem {
         public String id;
         public Map details;
-		public int fragment;
+        public int fragment;
 
         public SectionItem(String id, Map details, int fragment) {
             this.id = id;
             this.details = details;
-			this.fragment = fragment;
+            this.fragment = fragment;
         }
-        
+
         @Override
         public String toString() {
             return id;

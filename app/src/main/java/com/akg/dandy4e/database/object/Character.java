@@ -3,7 +3,7 @@ package com.akg.dandy4e.database.object;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
-public class Character extends BaseObservable{
+public class Character extends BaseObservable {
     private final Long dbID;
     private String characterName;
     private String characterRace;

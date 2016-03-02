@@ -3,6 +3,7 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="character"
             type="com.akg.dandy4e.database.object.Character"/>
@@ -37,10 +38,10 @@
         <TextView
             android:id="@+id/cslvr_race_value"
             style="@style/cslvr_small_label"
-            android:layout_toEndOf="@id/cslvr_race_label"
             android:layout_below="@+id/cslvr_name"
+            android:layout_toEndOf="@id/cslvr_race_label"
             android:text="@{character.characterRace}"/>
-        
+
         <TextView
             android:id="@+id/cslvr_class_label"
             style="@style/cslvr_small_label"
@@ -54,7 +55,7 @@
             android:layout_below="@+id/cslvr_name"
             android:layout_toEndOf="@id/cslvr_class_label"
             android:text="@{character.characterClass}"/>
-        
+
         <TextView
             android:id="@+id/cslvr_level_label"
             style="@style/cslvr_small_label"
@@ -69,6 +70,6 @@
             android:layout_below="@+id/cslvr_name"
             android:layout_toEndOf="@id/cslvr_level_label"
             android:text="@{String.valueOf(character.characterLevel)}"/>
-        
+
     </RelativeLayout>
 </layout>

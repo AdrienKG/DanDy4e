@@ -1,58 +1,59 @@
- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
     android:id="@+id/cc_rl"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="@dimen/layout_horizontal_margin"
-        android:paddingTop="@dimen/layout_vertical_margin"
-        android:paddingRight="@dimen/layout_horizontal_margin"
-        android:paddingBottom="@dimen/layout_vertical_margin"
-     >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/layout_vertical_margin"
+    android:paddingLeft="@dimen/layout_horizontal_margin"
+    android:paddingRight="@dimen/layout_horizontal_margin"
+    android:paddingTop="@dimen/layout_vertical_margin"
+    >
 
-     <TextView
-         android:id="@+id/cc_name_label"
-         android:labelFor="@+id/cc_name_field"
-         android:text="@string/name_label"
-         style="@style/cc_label"/>
+    <TextView
+        android:id="@+id/cc_name_label"
+        style="@style/cc_label"
+        android:labelFor="@+id/cc_name_field"
+        android:text="@string/name_label"/>
 
-     <EditText
-         android:id="@+id/cc_name_field"
-         android:inputType="textPersonName"
-         android:layout_toEndOf="@id/cc_name_label"
-         android:layout_alignTop="@+id/cc_name_label"
-         android:layout_alignBottom="@+id/cc_name_label"
-         style="@style/cc_text_field"
-         >
-         <requestFocus />
-     </EditText>
+    <EditText
+        android:id="@+id/cc_name_field"
+        style="@style/cc_text_field"
+        android:layout_alignBottom="@+id/cc_name_label"
+        android:layout_alignTop="@+id/cc_name_label"
+        android:layout_toEndOf="@id/cc_name_label"
+        android:inputType="textPersonName"
+        >
 
-     <TextView
-         android:id="@+id/cc_race_label"
-         android:labelFor="@+id/acc_race_field"
-         android:text="@string/race_label"
-         android:layout_below="@+id/cc_name_label"
-         style="@style/cc_label"/>
+        <requestFocus/>
+    </EditText>
 
-     <EditText
-         android:id="@+id/cc_race_field"
-         android:inputType="textCapWords"
-         android:layout_alignTop="@+id/cc_race_label"
-         android:layout_alignBottom="@+id/cc_race_label"
-         style="@style/cc_text_field"/>
+    <TextView
+        android:id="@+id/cc_race_label"
+        style="@style/cc_label"
+        android:layout_below="@+id/cc_name_label"
+        android:labelFor="@+id/acc_race_field"
+        android:text="@string/race_label"/>
 
-     <TextView
-         android:id="@+id/cc_class_label"
-         android:labelFor="@+id/cc_class_field"
-         android:text="@string/class_label"
-         android:layout_below="@+id/cc_race_label"
-         style="@style/cc_label"/>
+    <EditText
+        android:id="@+id/cc_race_field"
+        style="@style/cc_text_field"
+        android:layout_alignBottom="@+id/cc_race_label"
+        android:layout_alignTop="@+id/cc_race_label"
+        android:inputType="textCapWords"/>
 
-     <EditText
-         android:id="@+id/cc_class_field"
-         android:inputType="textCapWords"
-         android:layout_alignTop="@+id/cc_class_label"
-         android:layout_alignBottom="@+id/cc_class_label"
-         style="@style/cc_text_field"/>
+    <TextView
+        android:id="@+id/cc_class_label"
+        style="@style/cc_label"
+        android:layout_below="@+id/cc_race_label"
+        android:labelFor="@+id/cc_class_field"
+        android:text="@string/class_label"/>
 
- </RelativeLayout>
+    <EditText
+        android:id="@+id/cc_class_field"
+        style="@style/cc_text_field"
+        android:layout_alignBottom="@+id/cc_class_label"
+        android:layout_alignTop="@+id/cc_class_label"
+        android:inputType="textCapWords"/>
+
+</RelativeLayout>

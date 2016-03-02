@@ -1,15 +1,15 @@
 package com.akg.dandy4e;
 
-import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.*;
-import android.widget.*;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
 
 /**
  * An activity representing a single Detail detail screen. This
@@ -33,28 +33,27 @@ public class SectionDetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-				ViewGroup vg = (RelativeLayout) findViewById(R.id.fdet_rl);
-				FloatingActionButton fab = (FloatingActionButton) view;
-				if (fab.getDrawable().getConstantState().equals(getResources().getDrawable(R
+                ViewGroup vg = (RelativeLayout) findViewById(R.id.fdet_rl);
+                FloatingActionButton fab = (FloatingActionButton) view;
+                if (fab.getDrawable().getConstantState().equals(getResources().getDrawable(R
                         .drawable.ic_mode_edit, view.getContext().getTheme()).getConstantState())) {
-                	fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_clear, view.getContext().getTheme()));
-					for (int i = 0; i < vg.getChildCount(); i++) {
-						View child = vg.getChildAt(i);
-						if (child instanceof EditText) {
-							((EditText) child).setFocusableInTouchMode(true);
+                    fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_clear, view.getContext().getTheme()));
+                    for (int i = 0; i < vg.getChildCount(); i++) {
+                        View child = vg.getChildAt(i);
+                        if (child instanceof EditText) {
+                            ((EditText) child).setFocusableInTouchMode(true);
                             ((EditText) child).setFocusable(true);
-						}
-					}
-				}
-				else {
-					fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_mode_edit, view.getContext().getTheme()));
-					for (int i = 0; i < vg.getChildCount(); i++) {
-						View child = vg.getChildAt(i);
-						if (child instanceof EditText) {
-							((EditText) child).setFocusable(false);
-						}
-					}
-				}
+                        }
+                    }
+                } else {
+                    fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_mode_edit, view.getContext().getTheme()));
+                    for (int i = 0; i < vg.getChildCount(); i++) {
+                        View child = vg.getChildAt(i);
+                        if (child instanceof EditText) {
+                            ((EditText) child).setFocusable(false);
+                        }
+                    }
+                }
             }
         });
 

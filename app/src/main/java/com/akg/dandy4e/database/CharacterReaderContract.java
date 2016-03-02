@@ -5,7 +5,8 @@ import android.provider.BaseColumns;
 public final class CharacterReaderContract {
     // To prevent someone from accidentally instantiating the contract class,
     // give it an empty constructor.
-    public CharacterReaderContract() {}
+    public CharacterReaderContract() {
+    }
 
     /* Inner class that defines the table contents */
     public static abstract class CharacterEntry implements BaseColumns {
@@ -15,9 +16,9 @@ public final class CharacterReaderContract {
         public static final String COLUMN_NAME_RACE = "race";
         public static final String COLUMN_NAME_CLASS = "class";
         public static final String COLUMN_NAME_LEVEL = "level";
-		public static final String COLUMN_NAME_XP = "xp";
-		public static final String COLUMN_NAME_EPIC = "epic";
-		public static final String COLUMN_NAME_PARAGON = "paragon";
-		public static final String COLUMN_NAME_MISC = "misc";
+        public static final String COLUMN_NAME_XP = "xp";
+        public static final String COLUMN_NAME_EPIC = "epic";
+        public static final String COLUMN_NAME_PARAGON = "paragon";
+        public static final String COLUMN_NAME_MISC = "misc";
     }
 }
