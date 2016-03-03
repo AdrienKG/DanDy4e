@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,69 +37,74 @@ public class CharacterSelection extends ActionBarActivity {
 
         db = CharacterReaderDbHelper.getSingleton(this).getWritableDatabase();
 
-        final ListView characterList = (ListView) findViewById(R.id.cs_characterList);
+        final RecyclerView characterList = (RecyclerView) findViewById(R.id.cs_characterList);
         registerForContextMenu(characterList);
-        characterList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
-        characterList.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
 
-            @Override
-            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-                // TODO Auto-generated method stub
-                return false;
-            }
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        characterList.setLayoutManager(layoutManager);
 
-            @Override
-            public void onDestroyActionMode(ActionMode mode) {
-                // TODO Auto-generated method stub
+//        characterList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+//        characterList.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
+//
+//            @Override
+//            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+//                // TODO Auto-generated method stub
+//                return false;
+//            }
+//
+//            @Override
+//            public void onDestroyActionMode(ActionMode mode) {
+//                // TODO Auto-generated method stub
+//
+//            }
+//
+//            @Override
+//            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+////                getMenuInflater().inflate(R.menu.menu_character_selction, menu);
+////                findViewById(R.id.listViewCheckBox);
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+//                switch (item.getItemId()) {
+////                    case R.id.action_discard:
+////                        SparseBooleanArray checked = characterList.getCheckedItemPositions();
+////                        for (int i = 0; i < characterList.getCount(); i++) {
+////                            if (checked.get(i)) {
+////                                db.delete(CharacterEntry.TABLE_NAME,
+////                                        CharacterEntry._ID + " = " + ((Character) characterList.getItemAtPosition(i)).getDBID().toString(),
+////                                        null);
+////                            }
+////                        }
+////                        refreshCharacterList();
+////                        mode.finish();
+////                        return true;
+//                    default:
+//                        return false;
+//                }
+//            }
 
-            }
+//            @Override
+//            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
+//                // TODO Auto-generated method stub
+//
+//            }
+//        });
 
-            @Override
-            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-//                getMenuInflater().inflate(R.menu.menu_character_selction, menu);
-//                findViewById(R.id.listViewCheckBox);
-                return true;
-            }
-
-            @Override
-            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                switch (item.getItemId()) {
-//                    case R.id.action_discard:
-//                        SparseBooleanArray checked = characterList.getCheckedItemPositions();
-//                        for (int i = 0; i < characterList.getCount(); i++) {
-//                            if (checked.get(i)) {
-//                                db.delete(CharacterEntry.TABLE_NAME,
-//                                        CharacterEntry._ID + " = " + ((Character) characterList.getItemAtPosition(i)).getDBID().toString(),
-//                                        null);
-//                            }
-//                        }
-//                        refreshCharacterList();
-//                        mode.finish();
-//                        return true;
-                    default:
-                        return false;
-                }
-            }
-
-            @Override
-            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-                // TODO Auto-generated method stub
-
-            }
-        });
-
-        characterList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                Intent intent = new Intent(arg1.getContext(), SectionListActivity.class);
-                intent.putExtra(CharacterEntry.COLUMN_NAME_ENTRY_ID,
-                        ((CharacterSelectionRecyclerAdapter) arg0.getAdapter()).getDBID(arg2));
-                startActivityForResult(intent, 1);
-            }
-
-
-        });
+//        characterList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//
+//            @Override
+//            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+//                Intent intent = new Intent(arg1.getContext(), SectionListActivity.class);
+//                intent.putExtra(CharacterEntry.COLUMN_NAME_ENTRY_ID,
+//                        ((CharacterSelectionRecyclerAdapter) arg0.getAdapter()).getDBID(arg2));
+//                startActivityForResult(intent, 1);
+//            }
+//
+//
+//        });
         refreshCharacterList();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.cs_fab);
@@ -134,7 +141,7 @@ public class CharacterSelection extends ActionBarActivity {
     }
 
     private void refreshCharacterList() {
-        final ListView characterList = (ListView) findViewById(R.id.cs_characterList);
+        final RecyclerView characterList = (RecyclerView) findViewById(R.id.cs_characterList);
         final List<Character> listOfNames = new ArrayList<Character>();
         
         Cursor c = CharacterReaderDbHelper.getSingleton(this).getCharacters(db);
@@ -150,10 +157,24 @@ public class CharacterSelection extends ActionBarActivity {
             c.moveToNext();
         }
 
-//        final MainListViewAdapter arrayAdapter = new MainListViewAdapter(this, listOfNames);
         final CharacterSelectionRecyclerAdapter arrayAdapter = new
-                CharacterSelectionRecyclerAdapter(this,
-                listOfNames);
+                CharacterSelectionRecyclerAdapter(listOfNames, R.layout.activity_character_selection_list_view_row);
         characterList.setAdapter(arrayAdapter);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

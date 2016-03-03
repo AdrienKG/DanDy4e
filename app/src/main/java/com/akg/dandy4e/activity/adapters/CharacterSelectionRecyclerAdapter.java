@@ -14,10 +14,12 @@ import com.akg.dandy4e.databinding.ActivityCharacterSelectionListViewRowBinding;
 import java.util.List;
 
 public class CharacterSelectionRecyclerAdapter extends RecyclerView.Adapter<CharacterSelectionRecyclerAdapter.CharacterSelectionRecyclerViewHolder> {
-    List<Character> modelItems = null;
+    private List<Character> modelItems;
+    private int itemLayout;
 
-    public CharacterSelectionRecyclerAdapter(List<Character> resource) {
+    public CharacterSelectionRecyclerAdapter(List<Character> resource, int itemLayout) {
         this.modelItems = resource;
+        this.itemLayout = itemLayout;
     }
 //
 //    @Override
@@ -39,18 +41,17 @@ public class CharacterSelectionRecyclerAdapter extends RecyclerView.Adapter<Char
 //        return binding.getRoot();
 //    }
 //
-//    public Long getDBID(int position) {
-//        Character item = modelItems.get(position);
-//        if (item != null) {
-//            return item.getDBID();
-//        }
-//        return Long.valueOf(-1);
-//    }
+    public Long getDBID(int position) {
+        Character item = modelItems.get(position);
+        if (item != null) {
+            return item.getDBID();
+        }
+        return Long.valueOf(-1);
+    }
 
     @Override
     public CharacterSelectionRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_character_selection_list_view_row, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(itemLayout, parent, false);
         CharacterSelectionRecyclerViewHolder holder = new CharacterSelectionRecyclerViewHolder(v);
         return holder;
     }
