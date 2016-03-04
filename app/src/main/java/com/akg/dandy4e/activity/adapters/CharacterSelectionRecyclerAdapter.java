@@ -1,13 +1,18 @@
 package com.akg.dandy4e.activity.adapters;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.support.v7.internal.widget.AdapterViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.akg.dandy4e.BR;
 import com.akg.dandy4e.R;
+import com.akg.dandy4e.SectionListActivity;
+import com.akg.dandy4e.database.CharacterReaderContract;
 import com.akg.dandy4e.database.object.Character;
 import com.akg.dandy4e.databinding.ActivityCharacterSelectionListViewRowBinding;
 
@@ -68,7 +73,8 @@ public class CharacterSelectionRecyclerAdapter extends RecyclerView.Adapter<Char
         return modelItems.size();
     }
 
-    public static class CharacterSelectionRecyclerViewHolder extends RecyclerView.ViewHolder {
+    public static class CharacterSelectionRecyclerViewHolder extends RecyclerView.ViewHolder
+            implements AdapterView.OnItemClickListener {
         private ActivityCharacterSelectionListViewRowBinding binding;
 
         public CharacterSelectionRecyclerViewHolder(View itemView) {
@@ -78,6 +84,14 @@ public class CharacterSelectionRecyclerAdapter extends RecyclerView.Adapter<Char
 
         public ActivityCharacterSelectionListViewRowBinding getBinding() {
             return binding;
+        }
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent intent = new Intent(view.getContext(), SectionListActivity.class);
+            intent.putExtra(CharacterReaderContract.CharacterEntry.COLUMN_NAME_ENTRY_ID,
+                    position);
+            view.getContext().startActivity(intent);
         }
     }
 }
