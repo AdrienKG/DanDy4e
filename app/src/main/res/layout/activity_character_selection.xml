@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".CharacterSelction">
+    tools:context=".CharacterSelection">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cs_characterList"
@@ -20,11 +20,12 @@
         android:id="@+id/cs_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/cs_characterList"
-        android:layout_alignEnd="@+id/cs_characterList"
         android:layout_gravity="bottom"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:clickable="true"
-        android:src="@drawable/ic_add"/>
+        android:src="@drawable/ic_add"
+        android:layout_alignBottom="@+id/cs_characterList"
+        android:layout_alignEnd="@+id/cs_characterList"
+        android:layout_marginBottom="20dp"/>
 </RelativeLayout>
